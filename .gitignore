@@ -1,0 +1,5 @@
+node_modules/
+uploads/*
+clear_data.sh
+install.sh
+start.sh
