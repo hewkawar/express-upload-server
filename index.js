@@ -84,10 +84,12 @@ app.post('/upload', upload.array('files'), (req, res) => {
     // Create an array of download URLs
     const uploadUrls = req.files.map((file) => {
         const fileId = file.filename.split('-')[0]; // Extract time-based ID from the filename
-        const downloadUrl = `http://localhost:${port}/download/${fileId}/${encodeURIComponent(file.originalname)}`;
-        const previewUrl = `http://localhost:${port}/preview/${fileId}/${encodeURIComponent(file.originalname)}`;
-        const deleteUrl = `http://localhost:${port}/delete/${fileId}/${encodeURIComponent(file.originalname)}`;
+        const encodedFileName = encodeURIComponent(file.originalname);
+        const downloadUrl = `http://localhost:${port}/download/${fileId}/${encodedFileName}`;
+        const previewUrl = `http://localhost:${port}/preview/${fileId}/${encodedFileName}`;
+        const deleteUrl = `http://localhost:${port}/delete/${fileId}/${encodedFileName}`;
         return {
+            filename: file.originalname,
             url: {
                 downloadUrl,
                 previewUrl,

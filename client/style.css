@@ -1,0 +1,55 @@
+body {
+    /* font-family: Arial, sans-serif; */
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#upload-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#fileInput {
+    display: none;
+}
+
+.file-input-label {
+    margin-bottom: 10px;
+    border: 2px dashed #ccc; /* Initial border color */
+    border-radius: 4px;
+    padding: 20px;
+    cursor: pointer;
+    width: 300px; /* Set a fixed width or adjust as needed */
+    display: inline-block; /* Ensure the label doesn't take the full width */
+    transition: border-color 0.3s; /* Add transition for a smooth color change */
+}
+
+.file-input-label div {
+    font-size: 16px;
+}
+
+.file-input-label.dragover {
+    border-color: #4caf50; /* Border color when dragging over */
+    background-color: #e1f5e3;
+}
+
+#uploadBtn {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#status {
+    margin-top: 10px;
+    font-weight: bold;
+}
